@@ -1,0 +1,30 @@
+import random
+
+guessing_number= random.randint(0, 100)
+count =0
+number_of_guesses = 1
+print("This is Number Guessing Game.")
+print(".......Guess the Number Between 0 to 100........")
+print("You Have 10 guesses left")
+
+
+while(number_of_guesses<=10):
+
+    guess_number=int(input("Enter your guess! :"))
+    count+=1
+
+    if(guess_number == guessing_number):
+        print(f"\nCongratulation! you guessed it in {count} guesses.")
+        break
+    
+    if (guess_number<guessing_number):
+        print("please choose greater Number please!.")
+    elif(guess_number>guessing_number):
+        print("please choose lesser Number please!.")
+
+    print("")
+    print(f"you have {10-count} guesses left")
+    number_of_guesses +=1
+
+if(number_of_guesses == 11):
+    print("...........Game Over.............")
